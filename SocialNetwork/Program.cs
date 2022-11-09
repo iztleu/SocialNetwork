@@ -1,13 +1,16 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-
-const string KEY = "mysupersecret_secretkey!123";  
+using SocialNetwork.DI;
+using SocialNetwork.Utils.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var tokenConfig = new TokenGeneratorConfiguration();
+builder.Configuration.GetSection("TokenGeneratorConfiguration").Bind(tokenConfig);
 // Add services to the container.
 
+builder.Services.InitializeDependencies(builder.Environment, builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -25,7 +28,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             // будет ли валидироваться время существования
             ValidateLifetime = true,
             // установка ключа безопасности
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(KEY)),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenConfig.SecurityKey)),
             // валидация ключа безопасности
             ValidateIssuerSigningKey = true
         };

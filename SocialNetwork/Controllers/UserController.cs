@@ -1,11 +1,7 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 using Core.Dto;
+using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using SocialNetwork.Models;
-using SocialNetwork.Models.ViewModels.Requests;
 
 namespace SocialNetwork.Controllers;
  
@@ -13,48 +9,42 @@ namespace SocialNetwork.Controllers;
 [Route("[controller]")]
 public class UserController : Controller
 {
-    const string KEY = "mysupersecret_secretkey!123";
-    [HttpPost]
-    public IActionResult Register([FromBody]RegistrationRequest request)
+    private readonly IUserHandler _userHandler;
+    
+    public UserController(IUserHandler userHandler)
     {
-        try
-        {
-
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        return Ok();
+        _userHandler = userHandler;
     }
     
-    [HttpPost("login")]
-    public async Task<ActionResult<UserEnvelope<UserDto>>> Login([FromBody]LoginRequest request)
+    [HttpPost("register")]
+    public async Task<ActionResult<UserEnvelope<UserDto>>> Register(
+            RequestEnvelope<UserEnvelope<NewUserDto>> request, CancellationToken cancellationToken)
     {
-       
         try
         {
-           
-            
-            var claims = new List<Claim> {new (ClaimTypes.Name, request.Login) };
-            
-            var handler = new JwtSecurityTokenHandler();
-            
-            var jwt = new JwtSecurityToken(
-                claims: claims,
-                expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(2)), // время действия 2 минуты
-                signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(KEY)), SecurityAlgorithms.HmacSha256));
-
-            var user = new UserDto(request.Login, request.Password, handler.WriteToken(jwt));
-           
-           return Ok(new UserEnvelope<UserDto>(user));
+            var user = await _userHandler.CreateAsync(request.Body.User, cancellationToken);
+            return Ok(new UserEnvelope<UserDto>(user));
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             return Problem(detail: e.Message);
         }
-
+    }
+    
+    [HttpPost("login")]
+    public async Task<ActionResult<UserEnvelope<UserDto>>> Login(
+        RequestEnvelope<UserEnvelope<LoginUserDto>> request, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var user = await _userHandler.LoginAsync(request.Body.User, cancellationToken);
+            return Ok(new UserEnvelope<UserDto>(user));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return Problem(detail: e.Message);
+        }
     }
 }

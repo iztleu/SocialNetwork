@@ -1,0 +1,31 @@
+Index: docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose.yml b/docker-compose.yml
+new file mode 100644
+--- /dev/null	(date 1667835088659)
++++ b/docker-compose.yml	(date 1667835088659)
+@@ -0,0 +1,18 @@
++  docker-compose.yml
++  version: "3.6"
++  services:
++    db:
++      image: mysql:5.7
++      container_name: go_sample
++      volumes:
++        # настройки mysql
++        - ./mysql/conf:/etc/mysql/conf.d
++        - ./mysql/data:/var/lib/mysql
++      command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
++      ports:
++        - 3306:3306
++      environment:
++        MYSQL_DATABASE: go_sample
++        MYSQL_ROOT_PASSWORD: password
++        MYSQL_USER: root
++        TZ: "Asia/Tokyo"
+\ No newline at end of file
+diff --git a/db/Dockerfile b/db/Dockerfile
+new file mode 100644
