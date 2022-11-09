@@ -15,9 +15,12 @@
     <ItemGroup>
       <Folder Include="Models\DomainModels" />
       <Folder Include="Models\Entities" />
-      <Folder Include="Models\ViewModels\Responses" />
       <Folder Include="Repository\Interfaces" />
-      <Folder Include="Services" />
+      <Folder Include="Services\Interfaces" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Core.csproj" />
     </ItemGroup>
 
 </Project>

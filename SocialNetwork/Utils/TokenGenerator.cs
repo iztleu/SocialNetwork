@@ -16,7 +16,7 @@ public class TokenGenerator: ITokenGenerator
     {
         _config = config;
     }
-
+ 
     public string CreateToken(string username)
     {
         var claims = new List<Claim> {new (ClaimTypes.Name, username) };
