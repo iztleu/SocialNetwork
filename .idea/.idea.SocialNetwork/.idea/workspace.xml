@@ -5,10 +5,7 @@
     <projectFile profileName="SocialNetwork">SocialNetwork/SocialNetwork.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="- WeatherForecast">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="handle AuthenticationException error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +30,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e505a640b0a24479868c3480870a2c3114800/ef/d0290637/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5cca3f0812c4cd5b3459befa246b34613f78/12/e0746ccd/JwtSecurityTokenHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f5f6c4c45aa9784d53fe3f28bfc882a8e68bc2921f1e0ca59c4b72702afeb4/SqlMapper.Async.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,7 +99,7 @@
       <updated>1667832033825</updated>
       <workItem from="1667832037819" duration="1843000" />
       <workItem from="1668007036635" duration="3521000" />
-      <workItem from="1668060806165" duration="9768000" />
+      <workItem from="1668060806165" duration="9907000" />
     </task>
     <task id="LOCAL-00001" summary="first work flow Login and Register user">
       <created>1668080555352</created>
@@ -124,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668080697896</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="handle AuthenticationException error">
+      <created>1668080883071</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668080883071</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +154,8 @@
     <MESSAGE value="first work flow Login and Register user" />
     <MESSAGE value="add db scripts" />
     <MESSAGE value="- WeatherForecast" />
-    <option name="LAST_COMMIT_MESSAGE" value="- WeatherForecast" />
+    <MESSAGE value="handle AuthenticationException error" />
+    <option name="LAST_COMMIT_MESSAGE" value="handle AuthenticationException error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -166,32 +172,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Core/Services/UserHandler.cs</url>
-          <line>29</line>
-          <properties documentPath="$PROJECT_DIR$/Core/Services/UserHandler.cs" initialLine="29" containingFunctionPresentation="method 'LoginAsync'">
-            <startOffsets>
-              <option value="927" />
-            </startOffsets>
-            <endOffsets>
-              <option value="989" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Data/Services/UserRepository.cs</url>
-          <line>27</line>
-          <properties documentPath="$PROJECT_DIR$/Data/Services/UserRepository.cs" initialLine="27" containingFunctionPresentation="method 'GetUserByEmailAsync'">
-            <startOffsets>
-              <option value="786" />
-            </startOffsets>
-            <endOffsets>
-              <option value="850" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
