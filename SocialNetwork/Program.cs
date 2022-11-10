@@ -1,10 +1,19 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Serilog;
 using SocialNetwork.DI;
 using SocialNetwork.Utils.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+// Serilog configuration        
+var logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
+// Register Serilog
+builder.Logging.AddSerilog(logger);
 
 var tokenConfig = new TokenGeneratorConfiguration();
 builder.Configuration.GetSection("TokenGeneratorConfiguration").Bind(tokenConfig);

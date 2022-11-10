@@ -1,5 +1,6 @@
 using Core.Dto;
 using Core.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialNetwork.Models;
 
@@ -15,7 +16,7 @@ public class UserController : Controller
     {
         _userHandler = userHandler;
     }
-    
+   
     [HttpPost("register")]
     public async Task<ActionResult<UserEnvelope<UserDto>>> Register(
             RequestEnvelope<UserEnvelope<NewUserDto>> request, CancellationToken cancellationToken)
