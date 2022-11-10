@@ -1,3 +1,4 @@
+using System.Security.Authentication;
 using Core.Dto;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -41,6 +42,11 @@ public class UserController : Controller
         {
             var user = await _userHandler.LoginAsync(request.Body.User, cancellationToken);
             return Ok(new UserEnvelope<UserDto>(user));
+        }
+        catch (AuthenticationException e)
+        {
+            Console.WriteLine(e);
+            return Unauthorized(e.Message);
         }
         catch (Exception e)
         {

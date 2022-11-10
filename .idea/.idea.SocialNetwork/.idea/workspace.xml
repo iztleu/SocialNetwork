@@ -5,9 +5,9 @@
     <projectFile profileName="SocialNetwork">SocialNetwork/SocialNetwork.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="first work flow Login and Register user">
-      <change afterPath="$PROJECT_DIR$/db/init.sql" afterDir="false" />
+    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="- WeatherForecast">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +101,7 @@
       <updated>1667832033825</updated>
       <workItem from="1667832037819" duration="1843000" />
       <workItem from="1668007036635" duration="3521000" />
-      <workItem from="1668060806165" duration="9646000" />
+      <workItem from="1668060806165" duration="9768000" />
     </task>
     <task id="LOCAL-00001" summary="first work flow Login and Register user">
       <created>1668080555352</created>
@@ -110,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668080555352</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add db scripts">
+      <created>1668080654089</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668080654089</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- WeatherForecast">
+      <created>1668080697896</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668080697896</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,37 +147,13 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="commit" />
     <MESSAGE value="first work flow Login and Register user" />
-    <option name="LAST_COMMIT_MESSAGE" value="first work flow Login and Register user" />
+    <MESSAGE value="add db scripts" />
+    <MESSAGE value="- WeatherForecast" />
+    <option name="LAST_COMMIT_MESSAGE" value="- WeatherForecast" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs</url>
-          <line>25</line>
-          <properties documentPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" initialLine="25" containingFunctionPresentation="method 'Register'">
-            <startOffsets>
-              <option value="666" />
-            </startOffsets>
-            <endOffsets>
-              <option value="746" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs</url>
-          <line>41</line>
-          <properties documentPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" initialLine="41" containingFunctionPresentation="method 'Login'">
-            <startOffsets>
-              <option value="1181" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1260" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Data/Services/UserRepository.cs</url>
           <line>20</line>
