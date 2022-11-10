@@ -5,9 +5,12 @@
     <projectFile profileName="SocialNetwork">SocialNetwork/SocialNetwork.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="">
+    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="fix register response">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialNetwork/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Dto/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Dto/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Services/UserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Services/UserHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Services/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Services/UserRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7050e6fcd749473ca96c227ee2c38dd9174e00/ea/1cd65b54/MySqlConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8288a260655e41aca396989bad1f6ccd9ec400/6d/4585d9e3/SR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8288a260655e41aca396989bad1f6ccd9ec400/ac/12fe084b/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8ecc5b2fa502475da5fd3f53dd502abc2b400/c4/c408ae2e/RequiredAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -33,8 +37,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e505a640b0a24479868c3480870a2c3114800/ef/d0290637/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5cca3f0812c4cd5b3459befa246b34613f78/12/e0746ccd/JwtSecurityTokenHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f5f6c4c45aa9784d53fe3f28bfc882a8e68bc2921f1e0ca59c4b72702afeb4/SqlMapper.Async.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Dto/UserDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Services/Interfaces/IUserHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Services/UserHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,7 +112,7 @@
       <updated>1667832033825</updated>
       <workItem from="1667832037819" duration="1843000" />
       <workItem from="1668007036635" duration="3521000" />
-      <workItem from="1668060806165" duration="10007000" />
+      <workItem from="1668060806165" duration="12912000" />
     </task>
     <task id="LOCAL-00001" summary="first work flow Login and Register user">
       <created>1668080555352</created>
@@ -140,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668080940014</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="cleaning">
+      <created>1668081095652</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668081095652</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +183,8 @@
     <MESSAGE value="- WeatherForecast" />
     <MESSAGE value="handle AuthenticationException error" />
     <MESSAGE value="clearing" />
-    <option name="LAST_COMMIT_MESSAGE" value="clearing" />
+    <MESSAGE value="cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

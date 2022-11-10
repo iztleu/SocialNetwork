@@ -9,17 +9,21 @@ public class User
     
     public User(NewUserDto newUser)
     {
-        Username = newUser.Username;
+        Name = newUser.Name;
         Password = newUser.Password;
         Email = newUser.Email;
+        Surname = newUser.Surname;
+        Age = newUser.Age;
+        Floor = newUser.Floor;
+        Interests = newUser.Interests;
+        City = newUser.City;
     }
     
-    [Column("user_name")]
-    public string Username { get; set; }
+    public string Name { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
     
-    public string? Name { get; set; }
+    
     public string? Surname { get; set; }
     public uint? Age { get; set; }
     public string? Floor { get; set; }

@@ -19,7 +19,9 @@ public class UserRepository: IUserRepository
     public async Task AddUserAsync(User user)
     {
         using IDbConnection db = new MySqlConnection(_connectionString);
-        var sqlQuery = "INSERT INTO users (user_name, password, email) VALUES(@Username, @Password, @Email)";
+        //var sqlQuery = "INSERT INTO users (name, password, email) VALUES(@Username, @Password, @Email)";
+        var sqlQuery = "INSERT INTO users (email, age, password, name, surname, floor, interests, city) " +
+                       "VALUES (@email, @age, @password, @name, @surname, @floor, @interests, @city);";
         await db.ExecuteAsync(sqlQuery, user);
     }
 

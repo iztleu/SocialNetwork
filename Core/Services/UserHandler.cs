@@ -21,8 +21,8 @@ public class UserHandler: IUserHandler
     {
         var user = new User(newUser);
         await _repository.AddUserAsync(user);
-        var token = _tokenGenerator.CreateToken(user.Username);
-        return new UserDto(user.Username, user.Email, token);
+        var token = _tokenGenerator.CreateToken(user.Name);
+        return new UserDto(user.Name, user.Email, token);
     }
 
     public async Task<UserDto> LoginAsync(LoginUserDto login, CancellationToken cancellationToken)
@@ -34,7 +34,7 @@ public class UserHandler: IUserHandler
             throw new AuthenticationException("incorrect credentials");
         }
 
-        var token = _tokenGenerator.CreateToken(user.Username);
-        return new UserDto(user.Username, user.Email, token);
+        var token = _tokenGenerator.CreateToken(user.Name);
+        return new UserDto(user.Name, user.Email, token);
     }
 }
