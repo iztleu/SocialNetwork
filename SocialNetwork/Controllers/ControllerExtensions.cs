@@ -15,6 +15,7 @@ public static class ControllerExtensions
             {
                 ValidationException => new ConflictResult(),
                 AuthenticationException => new UnauthorizedObjectResult(exception.Message),
+                ArgumentNullException => new NotFoundResult(),
                 _ => new StatusCodeResult(500)
             };
         });

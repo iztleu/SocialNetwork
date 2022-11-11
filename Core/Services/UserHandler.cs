@@ -21,27 +21,41 @@ public class UserHandler: IUserHandler
 
     public async Task<Result<UserDto>> CreateAsync(NewUserDto newUser, CancellationToken cancellationToken)
     {
-        if (await _repository.GetUserByEmailAsync(newUser.Email) != null)
+        if (await _repository.GetUserByEmailAsync(newUser.Email, cancellationToken) != null)
         {
             return new Result<UserDto>(new ValidationException("email already exists"));
         }
-        
+
         var user = new User(newUser);
-        await _repository.AddUserAsync(user);
-        var token = _tokenGenerator.CreateToken(user.Name);
-        return new UserDto(user.Name, user.Email, token);
+        await _repository.AddUserAsync(user, cancellationToken);
+        return user.GetDto(_tokenGenerator.CreateToken(user.Email));
     }
 
     public async Task<Result<UserDto>> LoginAsync(LoginUserDto login, CancellationToken cancellationToken)
     { 
-        var user = await _repository.GetUserByEmailAsync(login.Email);
+        var user = await _repository.GetUserByEmailAsync(login.Email, cancellationToken);
         
         if (user == null || user.Password != login.Password)
         {
             return new Result<UserDto>(new AuthenticationException("incorrect credentials"));
         }
 
-        var token = _tokenGenerator.CreateToken(user.Name);
-        return new UserDto(user.Name, user.Email, token);
+        return user.GetDto(_tokenGenerator.CreateToken(user.Email));
+    }
+
+    public async Task<Result<UserDto>> UpdateAsync(string email, UpdateUserDto updateUserDto, CancellationToken cancellationToken)
+    {
+        var user = await _repository.GetUserByEmailAsync(email, cancellationToken);
+        
+        if (user == null)
+        {
+            return new Result<UserDto>(new ArgumentNullException("Not found"));
+        }
+
+        user.Update(updateUserDto);
+        
+        await _repository.UpdateAsync(user, cancellationToken);
+        
+        return user.GetDto(_tokenGenerator.CreateToken(user.Email));
     }
 }

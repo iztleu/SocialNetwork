@@ -18,6 +18,11 @@ public class User
         Interests = newUser.Interests;
         City = newUser.City;
     }
+
+    public UserDto GetDto(string token)
+    {
+        return new UserDto(Email, Name, Surname, Age, Floor, Interests, City, Image, token);
+    }
     
     public string Name { get; set; }
     public string Email { get; set; }
@@ -29,4 +34,15 @@ public class User
     public string? Interests { get; set; }
     public string? City { get; set; }
     public string? Image { get; set; }
+
+    public void Update(UpdateUserDto updateUserDto)
+    {
+        Name = updateUserDto.Name;
+        Surname = updateUserDto.Surname ?? Surname;
+        Age = updateUserDto.Age ?? Age;
+        Floor = updateUserDto.Floor ?? Floor;
+        Interests = updateUserDto.Interests ?? Interests;
+        City = updateUserDto.City ?? City;
+        Image = updateUserDto.Floor ?? Image;
+    }
 }

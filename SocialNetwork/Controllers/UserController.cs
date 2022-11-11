@@ -1,8 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Authentication;
+using System.Security.Claims;
 using Core.Dto;
 using Core.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialNetwork.Models;
 
@@ -40,6 +42,28 @@ public class UserController : Controller
         try
         {
             var result = await _userHandler.LoginAsync(newUser, cancellationToken);
+            return result.Match();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return Problem(detail: ex.Message);
+        }
+    }
+    
+    [Authorize]
+    [HttpPut("update")]
+    public async Task<IActionResult> UpdateUser(UpdateUserDto updateUserDto, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (email == null)
+            {
+                return Unauthorized();
+            }
+
+            var result = await _userHandler.UpdateAsync(email, updateUserDto, cancellationToken);
             return result.Match();
         }
         catch (Exception ex)

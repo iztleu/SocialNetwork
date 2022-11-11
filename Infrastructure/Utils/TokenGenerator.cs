@@ -17,9 +17,9 @@ public class TokenGenerator: ITokenGenerator
         _config = config;
     }
  
-    public string CreateToken(string username)
+    public string CreateToken(string email)
     {
-        var claims = new List<Claim> {new (ClaimTypes.Name, username) };
+        var claims = new List<Claim> {new (ClaimTypes.Name, email) };
         var jwt = new JwtSecurityToken(
             claims: claims,
             expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(2)), // время действия 2 минуты
