@@ -5,18 +5,10 @@
     <projectFile profileName="SocialNetwork">SocialNetwork/SocialNetwork.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="">
+    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="+ cancellationToken&#10;+ Result">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Dto/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Dto/UserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Services/Interfaces/IUserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Services/Interfaces/IUserHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Services/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Services/Interfaces/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Services/UserHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Services/UserHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Services/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Services/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Utils/Interfaces/ITokenGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Utils/Interfaces/ITokenGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Utils/TokenGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Utils/TokenGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialNetwork/Controllers/ControllerExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/ControllerExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocialNetwork/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11e607f3564e4134941ebda24f4a5d52647c00/dc/a0b022ad/Result`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/307643c5088b478fb79a267e1e78597aa9000/3c/bebb5a15/AuthenticationException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7050e6fcd749473ca96c227ee2c38dd9174e00/ea/1cd65b54/MySqlConnection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7614e0e4059f4083b32f1db8718793cca280/20/065d42a1/JwtBearerEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7614e0e4059f4083b32f1db8718793cca280/d7/a1aac11d/MessageReceivedContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/76d13c559e104406bd6fb16be5f4a51c13000/84/3d932d12/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7aaf43dfa2c14e76b8d42cbea7e480f321600/23/338af7c3/AuthAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7aaf43dfa2c14e76b8d42cbea7e480f321600/97/0326e51a/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,8 +55,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e505a640b0a24479868c3480870a2c3114800/3d/ff967bae/Claim.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e505a640b0a24479868c3480870a2c3114800/ef/d0290637/ClaimTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5cca3f0812c4cd5b3459befa246b34613f78/12/e0746ccd/JwtSecurityTokenHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/415db55c964d12e8b675eaf1ab2d9229d4069b1f9482075a4d48a5d1e46ce28/JwtBearerHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bb22307331e5e85550767561182cfbce172780bed0e5e9c1faf39ec237b49e/CommandDefinition.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d544212193a962adb397358cd8328d4592454093d56a5cbe5b6dd9a372ea59/JwtBearerEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df8a4c9e791abd937554ba133caac372848f164fff962148de41febac87b1e/AuthenticationHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f5f6c4c45aa9784d53fe3f28bfc882a8e68bc2921f1e0ca59c4b72702afeb4/SqlMapper.Async.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Dto/UserDto.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/ControllerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -134,7 +134,7 @@
       <workItem from="1668007036635" duration="3521000" />
       <workItem from="1668060806165" duration="13393000" />
       <workItem from="1668138829441" duration="7498000" />
-      <workItem from="1668157969030" duration="10761000" />
+      <workItem from="1668157969030" duration="11951000" />
     </task>
     <task id="LOCAL-00001" summary="first work flow Login and Register user">
       <created>1668080555352</created>
@@ -192,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668165955617</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="+ cancellationToken&#10;+ Result">
+      <created>1668171803359</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668171803359</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +229,8 @@
     <MESSAGE value="cleaning" />
     <MESSAGE value="update flow" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="+ cancellationToken&#10;+ Result" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ cancellationToken&#10;+ Result" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -254,17 +262,17 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7aaf43dfa2c14e76b8d42cbea7e480f321600/97/0326e51a/AuthenticationMiddleware.cs</url>
-          <line>50</line>
-          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7aaf43dfa2c14e76b8d42cbea7e480f321600/97/0326e51a/AuthenticationMiddleware.cs" initialLine="50" containingFunctionPresentation="method 'Invoke'">
+          <url>file://$PROJECT_DIR$/SocialNetwork/Program.cs</url>
+          <line>70</line>
+          <properties documentPath="$PROJECT_DIR$/SocialNetwork/Program.cs" initialLine="64" containingFunctionPresentation="method 'OnMessageReceived'">
             <startOffsets>
-              <option value="2118" />
+              <option value="2243" />
             </startOffsets>
             <endOffsets>
-              <option value="2330" />
+              <option value="2307" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

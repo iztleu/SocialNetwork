@@ -5,6 +5,9 @@ using Serilog;
 using SocialNetwork.DI;
 using SocialNetwork.Utils.Configuration;
 
+const string ISSUER = "MyAuthServer"; // издатель токена
+const string AUDIENCE = "MyAuthClient"; // потребитель токена
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
@@ -31,11 +34,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
+            ValidIssuer = ISSUER,
             ValidateAudience = true,
+            ValidAudience = AUDIENCE,
             ValidateLifetime = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenConfig.SecurityKey)),
             ValidateIssuerSigningKey = true
         };
+        // options.Events = new JwtBearerEvents { OnMessageReceived = CustomOnMessageReceivedHandler.OnMessageReceived };
     });
 
 var app = builder.Build();
@@ -55,3 +61,29 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+public static class CustomOnMessageReceivedHandler
+{
+    public static Task OnMessageReceived(MessageReceivedContext context)
+    {
+        string authorization = context.Request.Headers["Authorization"];
+
+        // If no authorization header found, nothing to process further
+        if (string.IsNullOrEmpty(authorization))
+        {
+            context.NoResult();
+            return Task.CompletedTask;
+        }
+
+        context.Token = authorization;
+     
+        // If no token found, no further work possible
+        if (string.IsNullOrEmpty(context.Token))
+        {
+            context.NoResult();
+        }
+
+        return Task.CompletedTask;
+    }
+}

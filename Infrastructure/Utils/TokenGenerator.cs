@@ -11,7 +11,8 @@ public class TokenGenerator: ITokenGenerator
 {
     private readonly TokenGeneratorConfiguration _config;
 
-
+    private const string ISSUER = "MyAuthServer"; // издатель токена
+    private const string AUDIENCE = "MyAuthClient"; // потребитель токена
     public TokenGenerator(TokenGeneratorConfiguration config)
     {
         _config = config;
@@ -21,6 +22,8 @@ public class TokenGenerator: ITokenGenerator
     {
         var claims = new List<Claim> {new (ClaimTypes.Name, email) };
         var jwt = new JwtSecurityToken(
+            issuer:ISSUER,
+            audience: AUDIENCE,
             claims: claims,
             expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(2)), // время действия 2 минуты
             signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.SecurityKey)), SecurityAlgorithms.HmacSha256));
