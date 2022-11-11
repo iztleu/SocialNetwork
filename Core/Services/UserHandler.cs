@@ -1,7 +1,9 @@
+using System.ComponentModel.DataAnnotations;
 using System.Security.Authentication;
 using Core.Dto;
 using Core.Entities;
 using Core.Services.Interfaces;
+using LanguageExt.Common;
 using SocialNetwork.Utils.Interfaces;
 
 namespace Core.Services;
@@ -17,21 +19,26 @@ public class UserHandler: IUserHandler
         _repository = repository;
     }
 
-    public async Task<UserDto> CreateAsync(NewUserDto newUser, CancellationToken cancellationToken)
+    public async Task<Result<UserDto>> CreateAsync(NewUserDto newUser, CancellationToken cancellationToken)
     {
+        if (await _repository.GetUserByEmailAsync(newUser.Email) != null)
+        {
+            return new Result<UserDto>(new ValidationException("email already exists"));
+        }
+        
         var user = new User(newUser);
         await _repository.AddUserAsync(user);
         var token = _tokenGenerator.CreateToken(user.Name);
         return new UserDto(user.Name, user.Email, token);
     }
 
-    public async Task<UserDto> LoginAsync(LoginUserDto login, CancellationToken cancellationToken)
+    public async Task<Result<UserDto>> LoginAsync(LoginUserDto login, CancellationToken cancellationToken)
     { 
         var user = await _repository.GetUserByEmailAsync(login.Email);
         
         if (user == null || user.Password != login.Password)
         {
-            throw new AuthenticationException("incorrect credentials");
+            return new Result<UserDto>(new AuthenticationException("incorrect credentials"));
         }
 
         var token = _tokenGenerator.CreateToken(user.Name);

@@ -23,10 +23,10 @@ public class User
     public string Email { get; set; }
     public string Password { get; set; }
     
-    
     public string? Surname { get; set; }
     public uint? Age { get; set; }
     public string? Floor { get; set; }
     public string? Interests { get; set; }
     public string? City { get; set; }
+    public string? Image { get; set; }
 }

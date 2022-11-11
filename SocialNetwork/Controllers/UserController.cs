@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Authentication;
 using Core.Dto;
 using Core.Services.Interfaces;
@@ -18,39 +20,32 @@ public class UserController : Controller
     }
    
     [HttpPost("register")]
-    public async Task<ActionResult<UserEnvelope<UserDto>>> Register(
-            RequestEnvelope<UserEnvelope<NewUserDto>> request, CancellationToken cancellationToken)
+    public async Task<IActionResult> Register(NewUserDto newUser, CancellationToken cancellationToken)
     {
         try
         {
-            var user = await _userHandler.CreateAsync(request.Body.User, cancellationToken);
-            return Ok(new UserEnvelope<UserDto>(user));
+            var result = await _userHandler.CreateAsync(newUser, cancellationToken);
+            return result.Match();
         }
-        catch (Exception e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            return Problem(detail: e.Message);
+            Console.WriteLine(ex);
+            return Problem(detail: ex.Message);
         }
     }
     
     [HttpPost("login")]
-    public async Task<ActionResult<UserEnvelope<UserDto>>> Login(
-        RequestEnvelope<UserEnvelope<LoginUserDto>> request, CancellationToken cancellationToken)
+    public async Task<IActionResult> Login(LoginUserDto newUser, CancellationToken cancellationToken)
     {
         try
         {
-            var user = await _userHandler.LoginAsync(request.Body.User, cancellationToken);
-            return Ok(new UserEnvelope<UserDto>(user));
+            var result = await _userHandler.LoginAsync(newUser, cancellationToken);
+            return result.Match();
         }
-        catch (AuthenticationException e)
+        catch (Exception ex)
         {
-            Console.WriteLine(e);
-            return Unauthorized(e.Message);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return Problem(detail: e.Message);
+            Console.WriteLine(ex);
+            return Problem(detail: ex.Message);
         }
     }
 }
