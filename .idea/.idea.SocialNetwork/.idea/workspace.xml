@@ -6,17 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="configured authorization">
-      <change afterPath="$PROJECT_DIR$/Core/Dto/ArticleDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Entities/Article.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Services/ArticlesHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Services/Interfaces/IArticlesHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/Services/Interfaces/IArticlesRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/Services/ArticlesRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/ArticlesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SocialNetwork/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Entities/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocialNetwork/DI/DiExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/DI/DiExtension.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +62,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df8a4c9e791abd937554ba133caac372848f164fff962148de41febac87b1e/AuthenticationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f5f6c4c45aa9784d53fe3f28bfc882a8e68bc2921f1e0ca59c4b72702afeb4/SqlMapper.Async.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Entities/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Entities/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Entities/User.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/Core/Services/UserHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Utils/TokenGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SocialNetwork/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SocialNetwork/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>

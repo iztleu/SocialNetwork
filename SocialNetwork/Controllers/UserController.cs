@@ -1,12 +1,8 @@
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Authentication;
 using System.Security.Claims;
 using Core.Dto;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SocialNetwork.Models;
 
 namespace SocialNetwork.Controllers;
  
