@@ -23,7 +23,6 @@ builder.Configuration.GetSection("TokenGeneratorConfiguration").Bind(tokenConfig
 // Add services to the container.
 
 builder.Services.InitializeDependencies(builder.Environment, builder.Configuration);
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -41,8 +40,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenConfig.SecurityKey)),
             ValidateIssuerSigningKey = true
         };
-        // options.Events = new JwtBearerEvents { OnMessageReceived = CustomOnMessageReceivedHandler.OnMessageReceived };
+        //options.Events = new JwtBearerEvents { OnMessageReceived = CustomOnMessageReceivedHandler.OnMessageReceived };
     });
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 

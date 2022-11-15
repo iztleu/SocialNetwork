@@ -57,7 +57,7 @@ public class UserController : Controller
     {
         try
         {
-            var email = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var email = User.FindFirstValue(ClaimTypes.Name);
             if (email == null)
             {
                 return Unauthorized();

@@ -43,6 +43,6 @@ public class User
         Floor = updateUserDto.Floor ?? Floor;
         Interests = updateUserDto.Interests ?? Interests;
         City = updateUserDto.City ?? City;
-        Image = updateUserDto.Floor ?? Image;
+        Image = updateUserDto.Image ?? Image;
     }
 }
