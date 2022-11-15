@@ -26,9 +26,12 @@ public class ArticlesRepository: IArticlesRepository
 
     public async Task<ArticlesResponseDto> GetArticlesAsync(ArticlesQuery articlesQuery, string email, bool isFeed, CancellationToken cancellationToken)
     {
+        var query = @"SELECT * FROM article a 
+                    JOIN users u on a.authorid = u.id
+                    WHERE a.authorid = '' OR u.email = ''
+                    LIMIT 1 OFFSET 1;";
 
-        var query = "SELECT * FROM article";
-        
+
         // if (!string.IsNullOrWhiteSpace(articlesQuery.Author))
         // {
         //     query +=  
