@@ -19,5 +19,7 @@ public static class DiExtension
         services.AddTransient<ITokenGenerator, TokenGenerator>();
         services.AddTransient<IUserRepository, UserRepository>(_ => new UserRepository(connectionString));
         services.AddTransient<IUserHandler, UserHandler>();
+        services.AddTransient<IArticlesRepository, ArticlesRepository>(_ => new ArticlesRepository(connectionString));
+        services.AddTransient<IArticlesHandler, ArticlesHandler>();
     }
 }

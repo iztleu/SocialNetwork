@@ -22,7 +22,7 @@ public class UserController : Controller
     }
    
     [HttpPost("register")]
-    public async Task<IActionResult> Register(NewUserDto newUser, CancellationToken cancellationToken)
+    public async Task<IActionResult> Register([FromBody] NewUserDto newUser, CancellationToken cancellationToken)
     {
         try
         {
@@ -37,7 +37,7 @@ public class UserController : Controller
     }
     
     [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginUserDto newUser, CancellationToken cancellationToken)
+    public async Task<IActionResult> Login([FromBody] LoginUserDto newUser, CancellationToken cancellationToken)
     {
         try
         {
