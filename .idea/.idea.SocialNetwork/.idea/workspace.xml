@@ -5,8 +5,9 @@
     <projectFile profileName="SocialNetwork">SocialNetwork/SocialNetwork.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="configured authorization">
-      <change beforePath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" afterDir="false" />
+    <list default="true" id="30d03e10-d6ae-4544-9212-e6608ec262aa" name="Changes" comment="cleaning">
+      <change beforePath="$PROJECT_DIR$/Core/Services/Interfaces/IArticlesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Services/Interfaces/IArticlesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Services/ArticlesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Services/ArticlesRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +70,7 @@
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SocialNetwork/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/it/RiderProjects/SocialNetwork/SocialNetwork/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SocialNetwork/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -229,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668499470233</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="cleaning">
+      <created>1668519772390</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668519772390</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +251,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -256,13 +277,13 @@
     <MESSAGE value="- WeatherForecast" />
     <MESSAGE value="handle AuthenticationException error" />
     <MESSAGE value="clearing" />
-    <MESSAGE value="cleaning" />
     <MESSAGE value="update flow" />
     <MESSAGE value="push" />
     <MESSAGE value="+ cancellationToken&#10;+ Result" />
     <MESSAGE value="some test" />
     <MESSAGE value="configured authorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="configured authorization" />
+    <MESSAGE value="cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

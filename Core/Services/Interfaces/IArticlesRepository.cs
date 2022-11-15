@@ -7,5 +7,5 @@ public interface IArticlesRepository
 {
     public Task AddArticleAsync(Article article, CancellationToken cancellationToken);
     
-    public Task<ArticlesResponseDto> GetArticlesAsync(ArticlesQuery query, string email, bool isFeed, CancellationToken cancellationToken);
+    public Task<ArticlesResponseDto> GetArticlesAsync(ArticlesQuery articlesQuery, string email, bool isFeed, CancellationToken cancellationToken);
 }

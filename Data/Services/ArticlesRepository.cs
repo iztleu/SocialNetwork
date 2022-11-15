@@ -24,8 +24,16 @@ public class ArticlesRepository: IArticlesRepository
         await db.ExecuteAsync( new CommandDefinition(query, article, cancellationToken: cancellationToken));
     }
 
-    public async Task<ArticlesResponseDto> GetArticlesAsync(ArticlesQuery query, string email, bool isFeed, CancellationToken cancellationToken)
+    public async Task<ArticlesResponseDto> GetArticlesAsync(ArticlesQuery articlesQuery, string email, bool isFeed, CancellationToken cancellationToken)
     {
+
+        var query = "SELECT * FROM article";
+        
+        // if (!string.IsNullOrWhiteSpace(articlesQuery.Author))
+        // {
+        //     query +=  
+        // }
+        
         throw new NotImplementedException();
     }
 }
